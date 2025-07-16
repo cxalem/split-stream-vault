@@ -109,7 +109,6 @@ contract SplitStreamVault is Initializable, UUPSUpgradeable, ReentrancyGuard {
         emit WeightsUpdated(accounts, newWeights, totalWeight);
     }
 
-
     function pause() external onlyGuardian {
         paused = true;
         emit Paused();
@@ -120,9 +119,7 @@ contract SplitStreamVault is Initializable, UUPSUpgradeable, ReentrancyGuard {
         emit Unpaused();
     }
 
-
     function _authorizeUpgrade(address) internal override onlyGovernor {}
-
 
     function _claimInternal(
         address account,
